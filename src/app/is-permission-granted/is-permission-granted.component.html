@@ -1,0 +1,53 @@
+<div class ="container">
+    <div class="row">
+        <h3> isPermissionGranted form </h3>
+
+        <form #isPermission ="ngForm" (ngSubmit) = "submit(isPermission.value)">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group mb-2">
+                        <label for="exampleInputPassword1">CachePath</label>
+                        <input type="text" class="form-control" [(ngModel)] =user.pathURL name="pathURL"  #cachePath=ngModel placeholder="Enter cache path">
+                      </div> 
+                      <div class="form-group mb-2">
+                        <label for="exampleInputPassword1">DCX</label>
+                        <input type="text" class="form-control" [(ngModel)] =user.DCX name="DCX"  #DCX=ngModel placeholder="DCX">
+                      </div>  
+                      <div class="form-group mb-2">
+                        <label for="exampleInputPassword1">office</label>
+                        <input type="text" class="form-control" [(ngModel)] =user.office name="office"  #office=ngModel placeholder="Enter office name ">
+                      </div>  
+                      <div class="form-group mb-2">
+                        <label for="exampleInputPassword1">Sign </label>
+                        <input type="text" class="form-control" [(ngModel)] =user.password name="password"  #password=ngModel placeholder="Password">
+                      </div>  
+                      <div class="form-group mb-2">
+                        <label for="exampleInputPassword1">User ID</label>
+                        <input type="text" class="form-control" [(ngModel)] =user.userID name="userID"  #userID=ngModel placeholder="user ID">
+                      </div>  
+                      <div class="form-group mb-2">
+                        <label for="exampleInputPassword1">Organisation</label>
+                        <input type="text" class="form-control" [(ngModel)] =user.organisation name="organisation"  #organisation=ngModel placeholder="organisation">
+                      </div>   
+                      <div class="form-group mb-2">
+                        <label for="exampleInputPassword1">Permission Application</label>
+                        <input type="text" class="form-control" [(ngModel)] =user.permissionapplicaation name="permissionapplicaation"  #permissionapplicaation=ngModel placeholder="Permission Application">
+                      </div>  
+                      <div class="form-group mb-2">
+                        <label for="exampleInputPassword1">Permission name</label>
+                        <input type="text" class="form-control" [(ngModel)] =user.permission_name name="permission_name"  #permission_name=ngModel placeholder="permission name">
+                      </div>  
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button class="btn btn-primary btn-md">RUN</button> 
+                    <button class="btn btn-danger btn-md"> Export or Import Query Hash</button>
+                 </div>
+            </div>
+            <div class="row">
+                <h1 class="result">{{result}}</h1>
+            </div>
+        </form>
+    </div>
+</div>
