@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {NgForm} from '@angular/forms';
 import { userdata } from './usermodel';
+import { IspermissiongrantedService } from '../services/ispermissiongranted.service';
 @Component({
   selector: 'app-is-permission-granted',
   templateUrl: './is-permission-granted.component.html',
@@ -10,14 +10,22 @@ export class IsPermissionGrantedComponent {
 
   user : userdata;
 
-  result:boolean;
+  result:any
 
-  constructor(){
+  constructor(private apiService: IspermissiongrantedService){
     this.user ={} as userdata;
-    this.result = false;
+    console.log(this.user);
+  }
+  userInput(){
+    this.user ={} as userdata;
+    console.log(this.user);
+
   }
   
   submit(data:any){
-    console.log(data);
+    this.user = data
+  //  console.log(this.user);
+    this.apiService.usersGet(data).subscribe((res: any)=>{this.result=res.success
+     console.log(res)});
   }
 }
